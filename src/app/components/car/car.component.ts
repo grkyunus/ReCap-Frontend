@@ -22,7 +22,7 @@ export class CarComponent implements OnInit {
   getCars(){
     this.carService.getCars().subscribe(response=>{
       this.cars=response.data
-      this.dataLoaded=true;  // Buradaki görev senkron olarak çalışması veri yüklendikten sonra devam eder.
+      this.dataLoaded=true;  // Buradaki gorev senkron olarak calismasi veri yuklendikten sonra devam eder.
     })
   }
 
