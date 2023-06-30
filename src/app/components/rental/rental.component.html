@@ -1,1 +1,21 @@
-<p>rental works!</p>
+<div *ngIf="dataLoaded==false" class="spinner-grow text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+<table *ngIf="dataLoaded==!false" class ="table">
+    <thead>
+        <tr>
+            <th>Rental</th>
+            <th>CarId</th>
+            <th>CustomerId</th>
+            <th>RentDate</th>
+            <th>ReturnDate</th>
+        </tr>
+    </thead>
+    <tr *ngFor= "let rental of rentals"> <!-- bu kisim tablo satiri -->
+        <td>{{rental.rentalId}}</td> <!-- tablo  satirinin sutunu -->
+        <td>{{rental.carId}}</td> 
+        <td>{{rental.customerId}}</td> 
+        <td>{{rental.rentDate}}</td>
+        <td>{{rental.returnDate}}</td> 
+    </tr>
+</table>
