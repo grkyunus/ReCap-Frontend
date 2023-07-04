@@ -7,19 +7,19 @@
             <th>Car</th>
             <th>Brand</th>
             <th>Color</th>
-            <th>ModelYear</th>
             <th>Model</th>
+            <th>ModelYear</th>
             <th>DailyPrice</th>
             <th>Description</th>
         </tr>
     </thead>
-    <tr *ngFor= "let car of cars"> <!-- bu kisim tablo satiri -->
-        <td>{{car.id}}</td> <!-- tablo  satirinin sutunu -->
-        <td>{{car.brandId}} </td> 
-        <td>{{car.colorId}}</td> 
-        <td>{{car.modelYear}}</td>
-        <td>{{car.model}}</td>
-        <td>{{car.dailyPrice}}</td> 
-        <td>{{car.description}}</td> 
+    <tr *ngFor= "let cardto of carsdto"> <!-- bu kisim tablo satiri -->
+        <td>{{cardto.carId}}</td> <!-- tablo  satirinin sutunu -->
+        <td>{{cardto.brandName}} </td> 
+        <td>{{cardto.colorName}}</td> 
+        <td>{{cardto.model}}</td>
+        <td>{{cardto.modelYear}}</td>
+        <td>{{cardto.dailyPrice}}</td> 
+        <td>{{cardto.description}}</td> 
     </tr>
 </table>
