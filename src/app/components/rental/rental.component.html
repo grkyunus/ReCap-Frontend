@@ -6,7 +6,8 @@
         <tr>
             <th>Rental</th>
             <th>CarId</th>
-            <th>CustomerId</th>
+            <th>Brand</th>
+            <th>Name</th>
             <th>RentDate</th>
             <th>ReturnDate</th>
         </tr>
@@ -14,7 +15,8 @@
     <tr *ngFor= "let rental of rentals"> <!-- bu kisim tablo satiri -->
         <td>{{rental.id}}</td> <!-- tablo  satirinin sutunu -->
         <td>{{rental.carId}}</td> 
-        <td>{{rental.customerId}}</td> 
+        <td>{{rental.brandName}}</td> 
+        <td>{{rental.fullName}}</td> 
         <td>{{rental.rentDate}}</td>
         <td>{{rental.returnDate}}</td> 
     </tr>
