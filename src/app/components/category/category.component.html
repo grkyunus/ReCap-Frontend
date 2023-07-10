@@ -1,3 +1,11 @@
 <ul class="list-group">
-    <li> Categoriler </li>
+    <li (click)= "setCurrentAll()" [class]= "getAllClass()" routerLink="/cars/cardto" >  Categoriler </li>
+    <!-- <li (click)= "setCurrentAll()" [class]= "getAllClass()" > Categoriler </li> -->
 </ul>
+
+<!-- <ul class="list-group">
+    <a href="/cars/cardto" class="list-group-item list-group-item-action">Araç Listesi</a>
+    <a href="/rental-list" class="list-group-item list-group-item-action">Kiralama Listesi</a>
+    <a href="/user-list" class="list-group-item list-group-item-action">Kullanıcı Listesi</a>
+  </ul> -->
+  

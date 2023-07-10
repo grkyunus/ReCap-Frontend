@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Car } from 'src/app/models/car';
 import { CarDetail } from 'src/app/models/carDetail';
 import { Customer } from 'src/app/models/customer';
 import { Rental } from 'src/app/models/rental';
@@ -17,11 +18,20 @@ export class CategoryComponent {
   customers:Customer[] = []
   rentals:Rental[] = []
   dataLoaded = false;
+  currentAll: Car | null ;
+  // currentCustomer: Customer | null;
+  // currentRental: Rental | null;
 
-  constructor(private carDetailService:CarDetailService, private customerSerivce:CustomerService, private rentalService:RentalService) {}
+  constructor(private carDetailService:CarDetailService, private customerService:CustomerService, private rentalService:RentalService) {}
 
   ngOnInit():void{
+    this.getCars();
+    this.getCustomers();
+    this.getRentals();
+  }
 
+  setCurrentAll(){
+    this.currentAll = null;
   }
 
   getCars(){
@@ -32,11 +42,26 @@ export class CategoryComponent {
   }
 
   getCustomers(){
-
+    this.customerService.getCustomers().subscribe(response=>{
+    this.customers=response.data
+    this.dataLoaded=true;
+    })
   }
 
   getRentals(){
+    this.rentalService.getRentals().subscribe(response=>{
+    this.rentals=response.data
+    this.dataLoaded=true;
+    })
+  }
 
+  getAllClass(){
+    if(!this.currentAll){
+      return "list-group-item active"
+    }
+    else{
+      return "list-group-item"
+    }
   }
 
 }
