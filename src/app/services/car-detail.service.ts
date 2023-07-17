@@ -9,11 +9,22 @@ import { ListResponseodel } from '../models/responseModels/listResponseModel';
 })
 export class CarDetailService {
 
-  apiUrl = "https://localhost:7068/api/cars/cardto"
+  apiUrl = "https://localhost:7068/api/"
 
   constructor(private httpClient:HttpClient) { }
 
   getCarsDto():Observable<ListResponseodel<CarDetail>>{
-    return this.httpClient.get<ListResponseodel<CarDetail>>(this.apiUrl)
+    let newPath = this.apiUrl + "cars/cardto"
+    return this.httpClient.get<ListResponseodel<CarDetail>>(newPath)
+  }
+
+  getCarsByBrand(brandId:number):Observable<ListResponseodel<CarDetail>>{
+    let newPath = this.apiUrl + "cars/cardtobrandid?id="+ brandId
+    return this.httpClient.get<ListResponseodel<CarDetail>>(newPath);
+  }
+
+  getCarsByColor(colorId:number):Observable<ListResponseodel<CarDetail>>{
+    let newPath = this.apiUrl + "cars/cardtocolorid?id=" + colorId
+    return this.httpClient.get<ListResponseodel<CarDetail>>(newPath);
   }
 }
